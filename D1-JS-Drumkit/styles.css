@@ -1,0 +1,75 @@
+body {
+    /* background-image: url('./images/to.jpg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    font-family: monospace;
+}
+
+.kit {
+    position: absolute;
+    display: flex;
+    bottom: 40vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.kit > .name {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 30px;
+}
+
+.name > span {
+    width: auto;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border-radius: 50px;
+    color: maroon;
+    font-weight: 900;
+}
+
+.instrument {
+    text-align: center;
+    border: 5px solid black;
+    padding: 5px 20px;
+    border-radius: 5px;
+    font-weight: 900;
+    margin-left: 1px;
+    min-width: 60px;
+    transition: all 0.5s;
+    background-color: black;
+}
+
+.instrument:hover {
+    cursor: pointer;
+}
+
+.key {
+    font-size: 2.6em;
+    text-transform: uppercase;
+    color: maroon;
+}
+
+.now-playing {
+    transform: scale(1.2);
+    box-shadow: 0 0 100px;
+    border-color: greenyellow;
+}
+
+.instr-name {
+    color: white;
+    margin-top: 5px;
+}
+
+.overlay {
+    /* background-color: rgba(255, 120, 29, 0.5);
+    background-color: rgba(25, 12, 29, 0.7); */
+    position: relative;
+    height: 100%;
+    padding: 40px;
+    width: 100%;
+}

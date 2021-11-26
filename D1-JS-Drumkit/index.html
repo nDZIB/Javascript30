@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="overlay">
+        <div class="kit">
+            <div class="name">
+                <span>MystAfriq Drum Pad</span>
+            </div>
+            <div class="row">
+                <div data-key="81" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">Q</div>
+                    <div class="instr-name">Shaker</div>
+                </div>
+                <div data-key="8" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">a</div>
+                    <div class="instr-name">Agogo</div>
+                </div>
+                <div data-key="6" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">z</div>
+                    <div class="instr-name">Feet</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div data-key="87" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">W</div>
+                    <div class="instr-name">Agogo</div>
+                </div>
+                <div data-key="8" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">s</div>
+                    <div class="instr-name">Shaker</div>
+                </div>
+                
+                <div data-key="6" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">x</div>
+                    <div class="instr-name">Feet</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div data-key="69" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">e</div>
+                    <div class="instr-name">Shaker</div>
+                </div>
+                <div data-key="8" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">d</div>
+                    <div class="instr-name">Agogo</div>
+                </div>
+                <div data-key="6" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">c</div>
+                    <div class="instr-name">Feet</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div data-key="81" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">r</div>
+                    <div class="instr-name">Shaker</div>
+                </div>
+                <div data-key="87" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">f</div>
+                    <div class="instr-name">Agogo</div>
+                </div>
+                <div data-key="69" class="instrument">
+                    <kbd></kbd>
+                    <div class="key">v</div>
+                    <div class="instr-name">Feet</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sounds">
+        <audio src="./audio-samples/AF SHAKER 3.wav" data-key="81"></audio>
+        <audio src="./audio-samples//AFRO AGOGO 1.wav" data-key="87"></audio>
+        <audio src="./audio-samples/AFROFEET 4-LR.wav" data-key="69"></audio>
+
+        <!-- row 2 -->
+        <audio src="./audio-samples/AFROSNAPS1-LR.wav" data-key="81"></audio>
+        <audio src="./audio-samples/BIG BD 2B -LR.wav" data-key="87"></audio>
+        <audio src="./audio-samples/CEREMONY P-LR.wav" data-key="69"></audio>
+
+        <!-- row 3 -->
+        <audio src="./audio-samples/ET CLAVES LO.wav" data-key="81"></audio>
+        <audio src="./audio-samples/HAND DRM 1G.wav" data-key="87"></audio>
+        <audio src="./audio-samples/HNDCLPSS1G-LR.wav" data-key="69"></audio>
+
+        <!-- row 4 -->
+        <audio src="./audio-samples/ISHIISHAB-LR.wav" data-key="81"></audio>
+        <audio src="./audio-samples/VOOH-MAHH-LR.wav" data-key="87"></audio>
+        <audio src="./audio-samples/WATERDROP 2.wav" data-key="69"></audio>
+    </div>
+    <script>
+        const NOW_PLAYING_CLASSNAME = "now-playing";
+
+        function playSound(clickEvent) {
+            console.log(clickEvent);
+        }
+
+        function playInstrument(keyEvent) {
+            const keyCode = keyEvent.keyCode;
+            const audioSrc = document.querySelector(`audio[data-key='${keyCode}']`);
+
+            if (audioSrc) {
+                audioSrc.currentTime = 0;
+                audioSrc.play();
+
+                const currentInstrument = document.querySelector(`.instrument[data-key='${keyCode}']`);
+
+                currentInstrument.classList.toggle(NOW_PLAYING_CLASSNAME)
+            }
+        }
+
+        function transitionEnded(transitionEvent) {
+            if (transitionEvent.propertyName === 'transform') {
+                this.classList.remove(NOW_PLAYING_CLASSNAME)
+            }
+        }
+
+        const instrumentControls = document.querySelectorAll(`.instrument`);
+
+        instrumentControls.forEach(control => {
+            control.addEventListener("transitionend", transitionEnded);
+            control.addEventListener("click", playSound);
+        });
+
+        window.addEventListener("keydown", playInstrument)
+    </script>
+</body>
+
+</html>
