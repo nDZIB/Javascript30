@@ -1,4 +1,4 @@
-<html>
+<html !Doctype="html">
 
 <head>
     <link rel="stylesheet" href="./styles.css">
@@ -6,7 +6,7 @@
 
 <body>
     <div class="overlay">
-        <div class="kit">
+        <div class="kit" title="Use your keyboard to play">
             <div class="name">
                 <span>MystAfriq Drum Pad</span>
             </div>
@@ -16,15 +16,15 @@
                     <div class="key">Q</div>
                     <div class="instr-name">Shaker</div>
                 </div>
-                <div data-key="8" class="instrument">
+                <div data-key="65" class="instrument">
                     <kbd></kbd>
                     <div class="key">a</div>
                     <div class="instr-name">Agogo</div>
                 </div>
-                <div data-key="6" class="instrument">
+                <div data-key="90" class="instrument">
                     <kbd></kbd>
                     <div class="key">z</div>
-                    <div class="instr-name">Feet</div>
+                    <div class="instr-name">Claves</div>
                 </div>
             </div>
 
@@ -34,16 +34,16 @@
                     <div class="key">W</div>
                     <div class="instr-name">Agogo</div>
                 </div>
-                <div data-key="8" class="instrument">
+                <div data-key="83" class="instrument">
                     <kbd></kbd>
                     <div class="key">s</div>
-                    <div class="instr-name">Shaker</div>
+                    <div class="instr-name">Bass Drum</div>
                 </div>
-                
-                <div data-key="6" class="instrument">
+
+                <div data-key="88" class="instrument">
                     <kbd></kbd>
                     <div class="key">x</div>
-                    <div class="instr-name">Feet</div>
+                    <div class="instr-name">Hand Drum</div>
                 </div>
             </div>
 
@@ -51,35 +51,35 @@
                 <div data-key="69" class="instrument">
                     <kbd></kbd>
                     <div class="key">e</div>
-                    <div class="instr-name">Shaker</div>
+                    <div class="instr-name">Feet</div>
                 </div>
-                <div data-key="8" class="instrument">
+                <div data-key="68" class="instrument">
                     <kbd></kbd>
                     <div class="key">d</div>
-                    <div class="instr-name">Agogo</div>
+                    <div class="instr-name">Ceremony</div>
                 </div>
-                <div data-key="6" class="instrument">
+                <div data-key="67" class="instrument">
                     <kbd></kbd>
                     <div class="key">c</div>
-                    <div class="instr-name">Feet</div>
+                    <div class="instr-name">Claps</div>
                 </div>
             </div>
 
             <div class="row">
-                <div data-key="81" class="instrument">
+                <div data-key="82" class="instrument">
                     <kbd></kbd>
                     <div class="key">r</div>
-                    <div class="instr-name">Shaker</div>
+                    <div class="instr-name">Water Drop</div>
                 </div>
-                <div data-key="87" class="instrument">
+                <div data-key="70" class="instrument">
                     <kbd></kbd>
                     <div class="key">f</div>
-                    <div class="instr-name">Agogo</div>
+                    <div class="instr-name">Vooh Maah</div>
                 </div>
-                <div data-key="69" class="instrument">
+                <div data-key="86" class="instrument">
                     <kbd></kbd>
                     <div class="key">v</div>
-                    <div class="instr-name">Feet</div>
+                    <div class="instr-name">Ishii</div>
                 </div>
             </div>
         </div>
@@ -89,22 +89,21 @@
         <audio src="./audio-samples/AF SHAKER 3.wav" data-key="81"></audio>
         <audio src="./audio-samples//AFRO AGOGO 1.wav" data-key="87"></audio>
         <audio src="./audio-samples/AFROFEET 4-LR.wav" data-key="69"></audio>
+        <audio src="./audio-samples/WATERDROP 2.wav" data-key="82"></audio>
 
         <!-- row 2 -->
-        <audio src="./audio-samples/AFROSNAPS1-LR.wav" data-key="81"></audio>
-        <audio src="./audio-samples/BIG BD 2B -LR.wav" data-key="87"></audio>
-        <audio src="./audio-samples/CEREMONY P-LR.wav" data-key="69"></audio>
+        <audio src="./audio-samples/AFROSNAPS1-LR.wav" data-key="65"></audio>
+        <audio src="./audio-samples/BIG BD 2B -LR.wav" data-key="83"></audio>
+        <audio src="./audio-samples/CEREMONY P-LR.wav" data-key="68"></audio>
+        <audio src="./audio-samples/VOOH-MAHH-LR.wav" data-key="70"></audio>
 
         <!-- row 3 -->
-        <audio src="./audio-samples/ET CLAVES LO.wav" data-key="81"></audio>
-        <audio src="./audio-samples/HAND DRM 1G.wav" data-key="87"></audio>
-        <audio src="./audio-samples/HNDCLPSS1G-LR.wav" data-key="69"></audio>
-
-        <!-- row 4 -->
-        <audio src="./audio-samples/ISHIISHAB-LR.wav" data-key="81"></audio>
-        <audio src="./audio-samples/VOOH-MAHH-LR.wav" data-key="87"></audio>
-        <audio src="./audio-samples/WATERDROP 2.wav" data-key="69"></audio>
+        <audio src="./audio-samples/ET CLAVES LO.wav" data-key="90"></audio>
+        <audio src="./audio-samples/HAND DRM 1G.wav" data-key="88"></audio>
+        <audio src="./audio-samples/HNDCLPSS1G-LR.wav" data-key="67"></audio>
+        <audio src="./audio-samples/ISHIISHAB-LR.wav" data-key="86"></audio>
     </div>
+
     <script>
         const NOW_PLAYING_CLASSNAME = "now-playing";
 
