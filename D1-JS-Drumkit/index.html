@@ -106,13 +106,9 @@
 
     <script>
         const NOW_PLAYING_CLASSNAME = "now-playing";
+        const INSTRUMENT_CLASSNAME = "instrument"
 
-        function playSound(clickEvent) {
-            console.log(clickEvent);
-        }
-
-        function playInstrument(keyEvent) {
-            const keyCode = keyEvent.keyCode;
+        function loadSoundFor(keyCode) {
             const audioSrc = document.querySelector(`audio[data-key='${keyCode}']`);
 
             if (audioSrc) {
@@ -123,6 +119,27 @@
 
                 currentInstrument.classList.toggle(NOW_PLAYING_CLASSNAME)
             }
+        }
+
+        function playSound(clickEvent) {
+            //find the instrument in the path, 
+            //get its code and play the code
+            const instrument = clickEvent.path
+                .filter(p => {
+                    const className = p.className;
+                    if (className) return className.includes(INSTRUMENT_CLASSNAME);
+                    return false;
+                })[0];
+
+            if (instrument) {
+                const keyCode = instrument.dataset.key;
+                loadSoundFor(keyCode);
+            }
+        }
+
+        function playInstrument(keyEvent) {
+            const keyCode = keyEvent.keyCode;
+            loadSoundFor(keyCode);
         }
 
         function transitionEnded(transitionEvent) {
