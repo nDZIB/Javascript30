@@ -1,0 +1,74 @@
+:root {
+    --blur: 2px;
+    --primary: blue;
+    --accent: yellow;
+    --neutral: #bababa;
+    --shadow: 16px;
+    --font-size: 12px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.view {
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--neutral);
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.em {
+    display: inline-block;
+    transform: rotateX(180deg);
+    font-size: 40px;
+}
+
+.em:hover {
+    transform: rotateX(0deg) scale(1.4);
+    background-color: var(--primary);
+    color: var(--accent);
+}
+
+.img-ph {
+    border: 20px solid var(--primary);
+    padding: 0;
+    width: 340px;
+    height: 240px;
+
+    background-image: url("./assets/images/lake-barombi-mbo.jpeg");
+
+}
+
+.img {
+    width: 300px;
+    height: 200px;
+
+    filter: blur(var(--blur)) saturate(10%) drop-shadow(0 0 var(--shadow) var(--shadow), var(--accent));
+
+    transition: all 0.8s;
+
+    transform: rotateZ(5deg);
+
+}
+
+.img:hover {
+    transform: scale(2) rotateY(-180deg);
+    filter: blur(0) saturate(120%);
+    border: 5px double var(--accent)
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-size);
+}
+
+.em {
+    color: var(--accent);
+    font-weight: 900;
+}

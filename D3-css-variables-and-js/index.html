@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS vARIABLES AND JS</title>
+
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="view">
+
+        <div class="controls">
+            <form>
+                <span><label>Primary Color :</label>
+                    <input type="color" name="primary"></span> &nbsp;
+
+                <span><label>Accent Color :</label>
+                    <input type="color" name="accent"></span> &nbsp;
+
+                <span><label for="color">Neutral Color :</label>
+                    <input type="color" name="neutral"></span> <br>
+
+                <span><label for="shadow">Shadow Depth :</label>
+                    <input type="range" name="shadow" data-sizing="px"></span>
+
+                <span><label for="shadow">Body FontSize :</label>
+                    <input type="range" name="font-size" data-sizing="px"></span>
+            </form>
+        </div>
+
+        <div class="desc">
+            <h1 style="width: 40%; font-weight: 500; text-align: justify;">
+                You may not know this, but Kumaba, the green city is a beautiful place.
+                Despite the dust at some strategic places like Mile 1, Mbonge Road,
+                CCAS and a host of others. Kumba is blessed with such a view. As you may
+                or may not have guessed, this is <span class="em">Lake Barombi Mbo</span>, somewhere in Kumba in the
+                South West Region
+                of Cameroon.
+            </h1>
+        </div>
+        <div class="img-ph">
+            <img class="img" src="./assets/images/lake-barombi-mbo.jpeg" alt="lake Barombi Mbo">
+        </div>
+    </div>
+
+    <script>
+        const inputs = document.querySelectorAll(".controls input");
+
+        inputs.forEach(input => {
+            input.addEventListener("change", updateProp);
+            input.addEventListener("mousemove", updateProp);
+        });
+    </script>
+</body>
+
+</html>
