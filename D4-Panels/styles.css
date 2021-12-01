@@ -1,0 +1,60 @@
+.panels {
+    display: flex;
+    width: 100vw;
+}
+
+.panel {
+    height: 100vh;
+    flex: 1;
+    transition: all 0.8s;
+}
+
+.panel:hover {
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex: 9;
+    transform: rotate3d(1, 2, 10);
+}
+
+.title {
+    height: 100%;
+    width: 100%;
+    font-size: 0.5em;
+}
+
+.title:hover {
+    background-color: rgba(20, 20, 20, 0.7);
+    font-weight: 900;
+    font-size: 8em;
+    color: limegreen;
+}
+
+.title .tph {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    border: 1px solid white;
+    padding-bottom: 5vh;
+}
+
+.pnl-1 {
+    background-image: url("./images/abz.jpeg");
+}
+
+.pnl-2 {
+    background-image: url("./images/spigi.jpeg");
+}
+
+.pnl-3 {
+    background-image: url("./images/tnellz.jpg");
+}
+
+.pnl-4 {
+    background-image: url("./images/dsaint.jpeg");
+}
+
+.pnl-5{
+    background-image: url("./images/tas.jpeg");
+}
