@@ -34,7 +34,7 @@ function draw(e) {
         drawingCxt2D.stroke();
     } else if (changingBg) {
         boardHue += 2;
-        document.body.style.backgroundColor = `hsl(${boardHue}, 100%, 50%)`;
+        document.body.style.backgroundColor = `hsl(${boardHue}, 60%, 90%)`;
     } else {
         initX = e.offsetX;
         initY = e.offsetY;
@@ -51,15 +51,13 @@ function startDraw(event) {
     } else if (event.button == 1) {
         changingBg = true;
     } else {
-        stopDraw(event.offsetX, event.offsetY);
+        hue += 10
     }
 
 
 }
 
 function save(finalX, finalY) {
-    isDrawing = false;
-
     initX = finalX;
     initY = finalY;
 
@@ -67,7 +65,11 @@ function save(finalX, finalY) {
 }
 
 function stopDraw(event) {
-    save(event.offsetX, event.offsetY)
+    if (isDrawing)
+        save(event.offsetX, event.offsetY)
+
+    isDrawing = false;
+    changingBg = false;
 }
 
 window.addEventListener("mousemove", draw);
